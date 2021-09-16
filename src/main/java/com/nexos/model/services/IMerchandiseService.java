@@ -6,6 +6,8 @@ package com.nexos.model.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.nexos.model.dto.MerchandiseDto;
+import com.nexos.model.dto.MerchandiseRequestDto;
 import com.nexos.model.dto.StandardDto;
 import com.nexos.model.entities.Merchandise;
 
@@ -14,14 +16,16 @@ import com.nexos.model.entities.Merchandise;
  *
  */
 public interface IMerchandiseService {
-	
-	public List<Merchandise> getAllMerchandise();
-	
-	public Merchandise saveMerchandise(Merchandise merchandise);
-	
-	public StandardDto updateMerchandise(Merchandise merchandise, Merchandise merchandiseRequest);
-	
+
+	public List<MerchandiseDto> getAllMerchandise();
+
+	public MerchandiseDto saveMerchandise(MerchandiseRequestDto merchandise);
+
+	public StandardDto updateMerchandise(Merchandise merchandise, MerchandiseRequestDto merchandiseRequest);
+
 	public void deleteMerchandise(Merchandise merchandise);
-	
-	public Optional <Merchandise> findById(int merchandiseId);
+
+	public Optional<Merchandise> findById(int merchandiseId);
+
+	public List<MerchandiseDto> findByNameProduct(String nameProduct);
 }
